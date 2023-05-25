@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Blog</title>
+</head>
+
+<body class="min-w-[375px ]max-w-[1440px] min-h-[100vh] px-4 bg-[whitesmoke] ">
+
+    <section class="mb-4 pb-8 border-b">
+        <h2 class="text-[1.5rem] text-center mb-2">Blogs</h2>
+
+        <div>
+            <p>Add Blog</p>
+            <div>
+                <input class="border" type="text" placeholder="title" id="blogtitle">
+
+            </div>
+            <div class="my-4">
+                <textarea class="border" placeholder="Write blog" id="blogBody"></textarea>
+
+            </div>
+
+
+            <button class="p-2 bg-green-500" id="addblog">Add Blog</button>
+        </div>
+    </section>
+    <main id="main">
+        <!-- <div class="border flex-col items-center justify-center ">
+
+            <h2>dsfkjsdhfgjkdfkgjdf</h2>
+
+            <p>ksjfkjsdjgksdgk</p>
+            <button>Delete</button>
+        </div> -->
+
+    </main>
+    <!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+
+    <article class="rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6">
+        <h3 class="mt-0.5 text-lg font-medium text-gray-900">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        </h3>
+
+        <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+            dolores, possimus pariatur animi temporibus nesciunt praesentium dolore sed
+            nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
+            voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
+            Molestias explicabo corporis voluptatem?
+        </p>
+        <button class="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-red-600">
+            Delete
+        </button>
+    </article>
+
+</body>
+<script>
+
+    const main = document.getElementById('main');
+    let postData;
+    const addblogBtn = document.getElementById('addblog');
+    const blogTitle = document.getElementById('blogtitle');
+    const blogBody = document.getElementById('blogBody');
+
+    addblogBtn.addEventListener('click', (e) => {
+
+        if (blogTitle.value !== '' && blogBody.value !== '') {
+            let blog = {
+                id: Math.random() * 100,
+                title: blogTitle.value,
+                body: blogBody.value
+            }
+            console.log(blog);
+
+            cleanMain();
+            postData.unshift(blog)
+            postData.forEach((e) => {
+                let post = singlepost(e.title, e.body, e.id);
+                main.appendChild(post);
+                // console.log(e.title);
+            });
+
+        }
+
+    });
+
+    function singlepost(title, body, id) {
+
+        let maindiv = document.createElement('div');
+        maindiv.className = "rounded-lg border border-gray-100 bg-white p-4 shadow-sm transition hover:shadow-lg sm:p-6 my-2";
+        maindiv.id = id;
+
+        let heading = document.createElement('h2');
+        heading.innerText = title;
+        heading.className = 'mt-0.5 text-lg font-medium text-gray-900'
+
+        maindiv.appendChild(heading);
+
+        let mainbody = document.createElement('p');
+        mainbody.innerText = body;
+        mainbody.className = 'mt-2 line-clamp-3 text-sm/relaxed text-gray-500'
+
+        maindiv.appendChild(mainbody);
+
+        let deletebtn = document.createElement('button');
+        deletebtn.className = "group mt-4 inline-flex items-center gap-1 text-sm font-medium text-red-600"
+        deletebtn.innerText = 'Delete';
+
+
+        deletebtn.addEventListener('click', (event) => {
+            console.log(event.target.parentElement.id);
+            postData = postData.filter((e) => e.id != event.target.parentElement.id);
+            // console.log(postData);
+            cleanMain();
+            postData.forEach((e) => {
+                let post = singlepost(e.title, e.body, e.id);
+                main.appendChild(post);
+                // console.log(e.title);
+            });
+
+        })
+
+        maindiv.appendChild(deletebtn)
+
+        return maindiv;
+
+    }
+    function cleanMain() {
+        while (main.hasChildNodes()) {
+            main.removeChild(main.firstChild);
+        }
+    }
+    async function data() {
+        const data = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const responsedata = await data.json();
+        // console.log(responsedata.slice(0, 10));
+
+        postData = responsedata.slice(0, 10);
+
+        postData.forEach((e) => {
+            let post = singlepost(e.title, e.body, e.id);
+            main.appendChild(post);
+            // console.log(e.title);
+        });
+
+        // console.log(main);
+    }
+
+
+    data();
+
+</script>
+
+</html>

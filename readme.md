@@ -1,4 +1,5 @@
 # HTML
+
 [HTML Ans](./HTML/html.md)
 
 # CSS
@@ -7,11 +8,11 @@
 
 # Javascript
 
-[Js Ans](./HTML/html.md)
+[Js Ans](./Javascript/js.md)
 
 # React
 
-[React Ans](./HTML/html.md)
+[React Ans](./React/react.md)
 
 # Express
 
