@@ -144,7 +144,7 @@
 
 11. Explain Closures and Use cases of Closures
 
-    Ans:-
+    Ans:- Closure is function inside function which make that function a state full function. The closure is used to make self contained module, self contained state. The closure maintain its state for each function call.
 
 12. Create a Blog web app using JavaScript
 
