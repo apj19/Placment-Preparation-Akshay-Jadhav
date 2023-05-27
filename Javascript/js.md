@@ -140,7 +140,7 @@
 
 10. Explain Debouncing and Create a project where you are using Debouncing
 
-    Ans:-
+    Ans:- Debouncing is
 
 11. Explain Closures and Use cases of Closures
 
