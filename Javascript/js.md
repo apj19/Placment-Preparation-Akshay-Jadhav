@@ -125,7 +125,7 @@
     }
     thisKeyword(); //it refres to gloable window object
     const obj = {
-        name: "akshay",
+        name: "akshay jadhav",
 
         method: function () {
             console.log(this);
