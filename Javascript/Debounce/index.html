@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Debounce</title>
+</head>
+
+<body class="flex justify-center items-center pt-32 flex-col">
+    <h1 class="text-[2rem]">Debounce in JavaScript</h1>
+
+    <button
+        class="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white  active:text-opacity-75 sm:w-auto"
+        id="btnClick">
+        Click Me
+    </button>
+    <p class="py-4">No of time button clicked <span class="text-red-500" id="btnclickValue">0</span></p>
+    <p>No of time event triggered after 500ms of debounce <span class="text-green-500" id="btndebounce">0</span></p>
+
+    <div class="rounded-xl border my-4  w-[400px] border-gray-800 bg-gray-900 p-4 shadow-xl sm:p-6 lg:p-8">
+
+
+        <h3 class="mt-3 text-lg font-bold text-white sm:text-xl">
+            Debounce: Event will triggered after 900ms of user action
+        </h3>
+
+
+    </div>
+
+
+
+</body>
+<script>
+
+    const btnclick = document.getElementById("btnClick");
+    const btnclickValue = document.getElementById("btnclickValue");
+    const btndebounce = document.getElementById("btndebounce");
+
+
+    let btncount = 0;
+    let triggrecount = 0;
+
+    const handleDebounce = _.debounce(() => {
+        triggrecount += 1;
+        btndebounce.innerText = triggrecount;
+    }, 900)
+
+
+
+    btnclick.addEventListener('click', () => {
+        btncount += 1;
+        btnclickValue.innerText = btncount;
+        // triggrecount += 1;
+
+        // btndebounce.innerText = triggrecount;
+        handleDebounce();
+
+
+
+    });
+
+</script>
+
+</html>

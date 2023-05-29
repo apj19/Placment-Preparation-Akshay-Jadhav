@@ -140,7 +140,8 @@
 
 10. Explain Debouncing and Create a project where you are using Debouncing
 
-    Ans:- Debouncing is
+    Ans:- Debouncing limits the number of time function triggered with user action. It will wait for certain time after user action.
+    [Debouncing](./Debounce/index.html)
 
 11. Explain Closures and Use cases of Closures
 
