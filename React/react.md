@@ -1,54 +1,66 @@
 # React
 
-1.   What’s React and What are the advantages of it?
+1.  What’s React and What are the advantages of it?
 
-     Ans:- 
+    Ans:- React is javaScript Library
 
-2.   What's Virtual Dom in React & What are the advantages of it?
-
-     Ans:-
-3.   Explain LifeCycle of React Components?
-
-     Ans:-
-4.  Whats the difference between between Functional Components and Class
-Components?
+2.  What's Virtual Dom in React & What are the advantages of it?
 
     Ans:-
+
+3.  Explain LifeCycle of React Components?
+
+    Ans:-
+
+4.  Whats the difference between between Functional Components and Class
+    Components?
+
+        Ans:-
+
 5.  What are the hooks in React & Can we use Hooks in Class Components?
 
     Ans:-
+
 6.  What are the LifeCycle method and the advantages of it?
 
     Ans:-
-7.   What’s useState Hook & Advantages of it? 
+
+7.  What’s useState Hook & Advantages of it?
 
     Ans:-
-8.   Explain useEffect & Advantages of it
+
+8.  Explain useEffect & Advantages of it
 
     Ans:-
-9.   Explain Context Api and create a minor project on it
+
+9.  Explain Context Api and create a minor project on it
 
     Ans:-
-10.   Explain useReducer and Its advantages.
 
-     Ans:-
-11.   build a Todo Web App Using React and useReducer Hook.
+10. Explain useReducer and Its advantages.
 
-     Ans:-
-12.   Build A simple counter app using React
+    Ans:-
 
-     Ans:-
+11. build a Todo Web App Using React and useReducer Hook.
 
-13.  Build Calculator Using React Only 
+    Ans:-
 
-     Ans:-
-14.   Build a Tic Tac Toe Game using Class Component of React
+12. Build A simple counter app using React
 
-     Ans:-
-15.   Explain Prop Drilling & How can we avoid it?
+    Ans:-
 
-     Ans:-
- 
-16.   Create a task manager where user can create tasks and see his task
+13. Build Calculator Using React Only
 
-     Ans:-
+    Ans:-
+
+14. Build a Tic Tac Toe Game using Class Component of React
+
+    Ans:-
+
+15. Explain Prop Drilling & How can we avoid it?
+
+    Ans:-
+
+16. Create a task manager where user can create tasks and see his task
+
+    Ans:-
