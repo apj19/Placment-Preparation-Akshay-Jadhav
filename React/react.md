@@ -51,7 +51,28 @@
 
 8.  Explain useEffect & Advantages of it
 
-    Ans:- useEffect hook is used to implement lifecycle method in functional component
+    Ans:- useEffect hook is used to implement lifecycle method in functional component.
+
+    ```
+    Mounting
+    useEffect(()=>{
+
+    },[]);
+
+    Updating
+    useEffect(()=>{
+
+    },[dependentState]);
+
+    Unmounting
+    useEffect(()=>{
+
+        return {
+
+        }
+
+    },[]);
+    ```
 
 9.  Explain Context Api and create a minor project on it
 
