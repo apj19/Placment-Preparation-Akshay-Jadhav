@@ -8,7 +8,7 @@ function Calculator() {
   const [equationArray, setEquationArray] = useState([]);
 
   function solve() {
-    console.log(display);
+    // console.log(display);
     const temparray = display.split("").filter((v) => v != " ");
     let numberarray = [0];
     const oparray = ["+", "-", "/", "x"];
@@ -23,17 +23,52 @@ function Calculator() {
       }
     }
     numberarray.push(temp);
+    numberarray = numberarray.slice(1);
 
-    console.log(numberarray);
+    const input = [...numberarray];
+    // console.log(input);
+    while (input.length !== 1) {
+      if (input.indexOf("x") !== -1) {
+        let v =
+          parseFloat(input[input.indexOf("x") - 1]) *
+          parseFloat(input[input.indexOf("x") + 1]);
+        input.splice(input.indexOf("x") - 1, 3, v);
+      }
+
+      if (input.indexOf("/") !== -1) {
+        let v =
+          parseFloat(input[input.indexOf("/") - 1]) /
+          parseFloat(input[input.indexOf("/") + 1]);
+        input.splice(input.indexOf("/") - 1, 3, v);
+      }
+
+      if (input.indexOf("+") !== -1) {
+        let v =
+          parseFloat(input[input.indexOf("+") - 1]) +
+          parseFloat(input[input.indexOf("+") + 1]);
+        input.splice(input.indexOf("+") - 1, 3, v);
+      }
+
+      if (input.indexOf("-") !== -1) {
+        let v =
+          parseFloat(input[input.indexOf("-") - 1]) -
+          parseFloat(input[input.indexOf("-") + 1]);
+        input.splice(input.indexOf("-") - 1, 3, v);
+      }
+    }
+
+    // console.log(input);
+    setDisplay(`${input[0]}`);
   }
 
   function displayEquation(input) {
     setOperationFlag(true);
-    setDisplay(`${display} ${input}`);
+    setDisplay(`${display}${input}`);
   }
   return (
     <div className="flex h-[100vh] justify-center items-center">
       <div>
+        <p className="mb-2 text-center text-blue-500 text-2xl  ">Calculator</p>
         <p className="mb-2 bg-[#eeeeee] h-[60px] flex justify-end items-end">
           {display}
         </p>
@@ -70,6 +105,10 @@ function Calculator() {
           <div
             className="w-[50px] h-[40px] hover:text-white cursor-pointer rounded-sm
             bg-[#62b5bd] flex justify-center items-center"
+            onClick={() => {
+              console.log(display);
+              setDisplay(display.slice(0, -1));
+            }}
           >
             DEL
           </div>
@@ -145,6 +184,7 @@ function Calculator() {
             className="w-[50px] h-[40px] border rounded-sm drop-shadow-md hover:bg-white bg-[#e5e4e0] flex justify-center items-center cursor-pointer "
             onClick={(e) => {
               displayEquation(e.target.innerText);
+              setOperationFlag(false);
             }}
           >
             -
@@ -171,6 +211,7 @@ function Calculator() {
             className="w-[50px] h-[40px] border rounded-sm drop-shadow-md hover:bg-white bg-[#e5e4e0] flex justify-center items-center cursor-pointer "
             onClick={(e) => {
               displayEquation(e.target.innerText);
+              setOperationFlag(false);
             }}
           >
             /
@@ -180,6 +221,7 @@ function Calculator() {
             className="w-[50px] h-[40px] border rounded-sm drop-shadow-md hover:bg-white bg-[#e5e4e0] flex justify-center items-center cursor-pointer "
             onClick={(e) => {
               displayEquation(e.target.innerText);
+              setOperationFlag(false);
             }}
           >
             x
@@ -195,14 +237,15 @@ function Calculator() {
             RESET
           </div>
 
-          <div
+          <button
+            disabled={!operationflag}
             className="col-span-2 h-[40px]  rounded-sm drop-shadow-md hover:text-white bg-[#ff8b39] flex justify-center items-center cursor-pointer "
             onClick={() => {
               solve();
             }}
           >
             =
-          </div>
+          </button>
         </div>
       </div>
     </div>
