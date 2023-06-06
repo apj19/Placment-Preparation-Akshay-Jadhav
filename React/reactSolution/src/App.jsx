@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Counter from "./pages/Counter";
 import Calculator from "./pages/Calculator";
+import TicTackToe from "./pages/TicTackToe";
+import NewGame from "./pages/NewGame";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/calculator" element={<Calculator />} />
+        <Route path="/ticktacktoe" element={<TicTackToe />}></Route>
+        <Route path="/ticktacktoe/new" element={<NewGame />}></Route>
       </Routes>
     </main>
   );
