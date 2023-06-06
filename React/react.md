@@ -76,23 +76,29 @@
 
 9.  Explain Context Api and create a minor project on it
 
-    Ans:-
+    Ans:- Context api is used to avoide props drilling. The context api is satatemangment whew the data is avalaiabe at parent that can be used any nested component using usecontext.
 
 10. Explain useReducer and Its advantages.
 
-    Ans:-
+    Ans:- useReducer hook is preffered over usestate where it need to implement conplex logic. it take intial state and reducer function it will return state nad dispatch method. wwith the dispatch method we can imporve
 
 11. build a Todo Web App Using React and useReducer Hook.
 
-    Ans:-
+    Ans:- [Live Demo](https://taskapjcr.netlify.app/)
 
 12. Build A simple counter app using React
 
     Ans:-
 
+    1. [Live Demo](https://gilded-nougat-8a4216.netlify.app/)
+    2. [Code](./reactSolution/)
+
 13. Build Calculator Using React Only
 
     Ans:-
+
+    1. [Live Demo](https://gilded-nougat-8a4216.netlify.app/)
+    2. [Code](./reactSolution/)
 
 14. Build a Tic Tac Toe Game using Class Component of React
 
@@ -100,8 +106,9 @@
 
 15. Explain Prop Drilling & How can we avoid it?
 
-    Ans:-
+    Ans:- Prop Drilling is the process where we send data from top comopnent to last nested component. if there are multiple components nested inside each other so transfer data from one level to another level data will flow from every components which don't need it.
+    to avoide prop srilling we use context api sate managment where the data is available at top level and any conponent can use it use usecontext
 
 16. Create a task manager where user can create tasks and see his task
 
-    Ans:-
+    Ans:- [live Demo](https://visionary-capybara-fb9e3a.netlify.app/)

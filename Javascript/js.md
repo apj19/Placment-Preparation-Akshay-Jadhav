@@ -141,7 +141,9 @@
 10. Explain Debouncing and Create a project where you are using Debouncing
 
     Ans:- Debouncing limits the number of time function triggered with user action. It will wait for certain time after user action.
-    [Debouncing](./Debounce/index.html)
+
+    1. [Live Demo](https://glistening-ganache-285b6c.netlify.app/)
+    2. [Code](./Debounce/index.html)
 
 11. Explain Closures and Use cases of Closures
 
@@ -149,4 +151,7 @@
 
 12. Create a Blog web app using JavaScript
 
-    Ans:- [blog](./Blog/index.html)
+    Ans:-
+
+    1. [Live Demo](https://jovial-fudge-4e2c07.netlify.app/)
+    2. [Code](./Blog/index.html)

@@ -18,8 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/calculator" element={<Calculator />} />
-        <Route path="/ticktacktoe" element={<TicTackToe />}></Route>
-        <Route path="/ticktacktoe/new" element={<NewGame />}></Route>
+        {/* <Route path="/ticktacktoe" element={<TicTackToe />}></Route> */}
+        {/* <Route path="/ticktacktoe/new" element={<NewGame />}></Route> */}
       </Routes>
     </main>
   );
