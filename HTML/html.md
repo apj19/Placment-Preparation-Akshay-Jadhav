@@ -16,11 +16,17 @@
 
 4.  Build Your Resume using HTML only
 
-    Ans:- [Resume](resume.html)
+    Ans:-
+
+    1. [Live Demo](https://effervescent-puffpuff-982c74.netlify.app/)
+    2. [Code](resume.html)
 
 5.  Write Html code so that it looks like the given image
 
-    Ans:-[Link](image.html)
+    Ans:-
+
+    1. [Live Demo](https://iridescent-halva-d0d96b.netlify.app/)
+    2. [Code](image.html)
 
 6.  What are some of the advantages of HsTML5 over its previous versions?
 
@@ -36,7 +42,10 @@
 
 7.  Create a simple Music player using html only
 
-    Ans:-[link](audio.wav)
+    Ans:-
+
+    1. [LiveDemo](https://melodic-croissant-0c80e6.netlify.app/)
+    2. [Code](audioplayer.html)
 
 8.  What is the difference between `<figure>` tag and `<img>` tag?
 
@@ -52,9 +61,12 @@
     global attributes?
 
     Ans:- tags are opening and closing of element. where attributes gives more information of element. The attribute is added at opening tag.
-        following are some global attributes
-        style,title,class,id
+    following are some global attributes
+    style,title,class,id
 
 10. build Table which looks like the given image
 
-    Ans:- [Table Link](table.html)
+    Ans:-
+
+    1. [Live Demo](https://dynamic-nasturtium-c8136e.netlify.app/)
+    2. [Code](table.html)
